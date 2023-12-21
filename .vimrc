@@ -47,8 +47,6 @@ Plugin 'dracula/vim', { 'name': 'dracula' }
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
 " Brief help
@@ -93,13 +91,10 @@ nnoremap <C-n> :NERDTree<CR>
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
 " Exit Vim if NERDTree is the only window remaining in the only tab.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && 
-b:NERDTree.isTabTree() | quit | endif
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 " Open the existing NERDTree on each new tab.
-autocmd BufWinEnter * if &buftype != 'quickfix' && getcmdwintype() == '' | silent NERDTreeMirror | 
-endif
+autocmd BufWinEnter * if &buftype != 'quickfix' && getcmdwintype() == '' | silent NERDTreeMirror | endif
 
 
 " Navigation
 nnoremap <tab> <C-w><C-w>
-
