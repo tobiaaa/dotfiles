@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+alias vim="nvim"
+alias clipc="xclip -i"
+alias clipp="xclip -o"
+alias ls="eza --color=auto"
+alias activate="source activate"

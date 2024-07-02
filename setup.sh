@@ -1,6 +1,11 @@
-#!/bin/sh
+#!/bin/bash
+
+# Stow
+stow -d . -t $HOME --simulate -v
 
 # zsh config
+
+
 
 # tmux config
 mkdir ~/.tmux;
