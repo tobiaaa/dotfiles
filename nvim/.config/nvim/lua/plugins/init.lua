@@ -15,7 +15,8 @@ return {
                 "lua-language-server",
                 "pyright",
                 "prettier",
-                "isort"
+                "isort",
+                "bash-language-server"
             },
         },
     },

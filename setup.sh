@@ -1,20 +1,26 @@
 #!/bin/bash
+set -e
 
-# Stow
-stow -d . -t $HOME --simulate -v
+# Bash
+if grep -q '/bash$' /etc/shells; then
+    echo "Bash installed"
+    stow bashrc
+fi
 
-# zsh config
+# Zsh
+if grep -q '/zsh$' /etc/shells; then
+    echo "Zsh installed"
+    stow zshrc
+fi
 
+# Tmux
+if command -v tmux &>/dev/null; then
+    echo "Tmux installed"
+    stow tmux
+fi
 
-
-# tmux config
-mkdir ~/.tmux;
-# Install tmux plugins
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
-ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf;
-
-# vim config
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-ln -s ~/.dotfiles/.vimrc ~/.vimrc;
+# Neovim
+if command -v nvim &>/dev/null; then
+    echo "Neovim installed"
+    stow nvim
+fi
