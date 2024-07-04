@@ -41,6 +41,6 @@ map("n", "<leader>Q", "<cmd>Bdelete!<CR>", { desc = "Force close current buffer"
 map("n", "<leader>ds", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Show diagnostic info" })
 
 -- Util
-map("n", "<leader>ds", "<cmd>echo expand('%:p')<CR>", { desc = "Show diagnostic info" })
+map("n", "<leader>dp", "<cmd>echo expand('%:p')<CR>", { desc = "Show current path" })
 
 
