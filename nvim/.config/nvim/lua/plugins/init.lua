@@ -45,5 +45,15 @@ return {
     {
         "xiyaowong/virtcolumn.nvim",
         event = "VeryLazy"
+    },
+    {
+        "wintermute-cell/gitignore.nvim",
+        dependencies = {
+            "nvim-telescope/telescope.nvim"
+        },
+       cmd = "Gitignore", 
+        config = function ()
+            require('gitignore')
+        end
     }
 }

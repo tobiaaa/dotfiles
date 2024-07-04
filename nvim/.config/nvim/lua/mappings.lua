@@ -35,6 +35,7 @@ map("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 map("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
 map("n", "<leader>q", "<cmd>Bdelete<CR>", { desc = "Close current buffer" })
+map("n", "<leader>Q", "<cmd>Bdelete!<CR>", { desc = "Force close current buffer" })
 
 -- LSP
 map("n", "<leader>ds", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Show diagnostic info" })
