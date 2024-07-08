@@ -8,6 +8,9 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 
 map("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
+-- Code Wrap
+map("n", "<M-z>", "<cmd>set wrap!<CR>", { desc = "Toggle wrap" })
+
 -- Increment/Decrement numbers
 map("n", "<leader>+", "<C-a>", { desc = "Increment Number" })
 map("n", "<leader>-", "<C-x>", { desc = "Decrement Number" })

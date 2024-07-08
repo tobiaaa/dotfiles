@@ -1,6 +1,7 @@
 return {
     "rmagatti/auto-session",
-    event = "VimEnter",
+    --event = "VimEnter",
+    enable=false,
     config = function()
         local auto_session = require("auto-session")
 

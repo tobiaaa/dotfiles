@@ -3,7 +3,7 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     build = ":TSUpdate",
     dependencies = {
-        "windwp/nvim-ts-autotag",
+        "latex-lsp/tree-sitter-latex"
     },
     config = function()
         local treesitter = require("nvim-treesitter.configs")
@@ -25,15 +25,16 @@ return {
                 "bash",
                 "python",
                 "gitignore",
-                "lua"
+                "lua",
+                "latex"
             },
             incremental_selection = {
                 enable = true,
                 keymaps = {
-                    init_selection = "<C-space>",
-                    node_incremental = "<C-space>",
-                    scope_incremental = false,
-                    node_decremental = "<bs>",
+                    init_selection = "<M-s>",
+                    node_incremental = "<M-k>",
+                    scope_incremental = "<M-n>",
+                    node_decremental = "<M-j>",
                 }
             }
         })
