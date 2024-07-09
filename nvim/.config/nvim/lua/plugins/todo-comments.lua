@@ -3,7 +3,7 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
-    local todo_comments = require("todo-comments")
+    local todo_comments = require "todo-comments"
     local map = vim.keymap.set
 
     map("n", "<leader>c-n", function()
@@ -14,6 +14,10 @@ return {
       todo_comments.jump_prev()
     end, { desc = "Previous todo comment" })
 
-    todo_comments.setup()
+    local opts = { keywords = {
+      DEBUG = { icon = "", color = "#CBA6F7" },
+    } }
+
+    todo_comments.setup(opts)
   end,
 }
