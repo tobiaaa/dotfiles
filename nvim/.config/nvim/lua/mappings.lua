@@ -30,7 +30,6 @@ map("n", "<leader>wl", "<C-w>l", { desc = "Focus right window" })
 map("n", "<leader>wj", "<C-w>j", { desc = "Focus lower window" })
 map("n", "<leader>wk", "<C-w>k", { desc = "Focus upper window" })
 
-
 map("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
 map("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" })
 map("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })
@@ -42,8 +41,7 @@ map("n", "<leader>Q", "<cmd>Bdelete!<CR>", { desc = "Force close current buffer"
 
 -- LSP
 map("n", "<leader>ds", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Show diagnostic info" })
+map("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename variable" })
 
 -- Util
 map("n", "<leader>dp", "<cmd>echo expand('%:p')<CR>", { desc = "Show current path" })
-
-
