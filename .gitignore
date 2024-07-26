@@ -103,4 +103,5 @@ Temporary Items
 
 # Custom
 nvim/.config/nvim/lazy-lock.json
+nvim/.config/nvim/spell/
 

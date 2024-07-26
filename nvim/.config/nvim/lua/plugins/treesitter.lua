@@ -26,7 +26,9 @@ return {
                 "python",
                 "gitignore",
                 "lua",
-                "latex"
+                "latex",
+                "markdown",
+                "markdown_inline"
             },
             incremental_selection = {
                 enable = true,
