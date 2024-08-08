@@ -7,6 +7,7 @@ local map = vim.keymap.set
 map("n", ";", ":", { desc = "CMD enter command mode" })
 
 map("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
+map("i", "jk", "<Esc>", { desc = "Exit insert mode" })
 
 -- Code Wrap
 map("n", "<M-z>", "<cmd>set wrap!<CR>", { desc = "Toggle wrap" })
