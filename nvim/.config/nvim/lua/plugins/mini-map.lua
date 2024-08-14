@@ -1,6 +1,7 @@
 return {
     "wfxr/minimap.vim",
     event = 'VeryLazy',
+    enable=false,
     ft = { "python", "lua" },
     config = function()
         vim.g["minimap_auto_start"] = 1
