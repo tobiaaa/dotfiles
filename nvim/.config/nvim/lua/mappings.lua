@@ -46,6 +46,7 @@ map("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename var
 
 -- Util
 map("n", "<leader>dp", "<cmd>echo expand('%:p')<CR>", { desc = "Show current path" })
+map("t", "jk", "<C-\\><C-n>", { desc = "Show current path" })
 
 -- Spellcheck
 map("n", "cs", "i<C-X>s", { desc = "Show spelling suggestions" })
