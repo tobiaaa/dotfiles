@@ -38,6 +38,7 @@ dofile(vim.g.base46_cache .. "statusline")
 
 vim.opt.termguicolors = true
 vim.opt.colorcolumn = {80,100}
+vim.opt.foldmethod = "manual"
 
 require "nvchad.autocmds"
 
