@@ -1,6 +1,6 @@
 return {
     "wfxr/minimap.vim",
-    event = 'VeryLazy',
+    -- event = 'VeryLazy',
     enable=false,
     ft = { "python", "lua" },
     config = function()
