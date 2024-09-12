@@ -51,3 +51,6 @@ map("t", "jk", "<C-\\><C-n>", { desc = "Show current path" })
 
 -- Spellcheck
 map("n", "cs", "i<C-X>s", { desc = "Show spelling suggestions" })
+
+-- Session
+map("n", "<leader>sl", function() require("persistence").select() end, { desc = "Load session" })
