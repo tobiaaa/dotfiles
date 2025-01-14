@@ -6,11 +6,11 @@ return {
     local todo_comments = require "todo-comments"
     local map = vim.keymap.set
 
-    map("n", "<leader>c-n", function()
+    map("n", "<leader>cn", function()
       todo_comments.jump_next()
     end, { desc = "Next todo comment" })
 
-    map("n", "<leader>c-p", function()
+    map("n", "<leader>cp", function()
       todo_comments.jump_prev()
     end, { desc = "Previous todo comment" })
 
