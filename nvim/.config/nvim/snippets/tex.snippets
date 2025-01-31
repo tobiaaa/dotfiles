@@ -1,0 +1,38 @@
+# \begin{}...\end{}
+snippet begin \begin{} ... \end{} block
+	\\begin{${1:env}}
+		${0:${VISUAL}}
+	\\end{$1}
+
+# Itemize
+snippet item itemize environment
+	\\begin{itemize}
+		\\item ${0}
+	\\end{itemize}
+snippet it \item
+	\\item ${1:${VISUAL}}
+
+# Enumerate
+snippet enum enumerate environment
+	\\begin{enumerate}
+		\\item ${0}
+	\\end{enumerate}
+
+# Figure
+snippet figi figure environment (includegraphics)
+	\\begin{figure}
+		\\centering
+		\\includegraphics[scale=${1}]{Figures/${2}}
+	\\caption{${3}}
+	\\label{fig:${4}}
+	\\end{figure}
+	${0}
+
+snippet fig figure environment (input)
+	\\begin{figure}
+		\\centering
+		\\input{${1}}
+	\\caption{${3}}
+	\\label{fig:${4}}
+	\\end{figure}
+	${0}

@@ -7,6 +7,6 @@ return {
   build = "make install_jsregexp",
 
   config = function()
-    require("luasnip.loaders.from_lua").load { paths = vim.fn.stdpath("config") .. "/snippets" }
+    require("luasnip.loaders.from_snipmate").load { paths = vim.fn.stdpath("config") .. "/snippets" }
   end,
 }

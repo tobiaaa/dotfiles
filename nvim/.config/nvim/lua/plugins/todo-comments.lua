@@ -4,15 +4,6 @@ return {
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
     local todo_comments = require "todo-comments"
-    local map = vim.keymap.set
-
-    map("n", "<leader>cn", function()
-      todo_comments.jump_next()
-    end, { desc = "Next todo comment" })
-
-    map("n", "<leader>cp", function()
-      todo_comments.jump_prev()
-    end, { desc = "Previous todo comment" })
 
     local opts = { keywords = {
       DEBUG = { icon = "", color = "#CBA6F7" },
