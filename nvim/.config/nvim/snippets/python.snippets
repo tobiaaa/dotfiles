@@ -1,0 +1,43 @@
+snippet #!
+	#!/usr/bin/env python3
+
+snippet imp
+	import ${0:module}
+
+snippet from
+	from ${1:package} import ${0:module}
+
+snippet with
+	with ${1:expr} as ${2:var}:
+		${0:${VISUAL}}
+
+snippet cla
+	class ${1:class_name}:
+		"""${0:description}"""
+
+snippet module
+	class ${1:class_name}(nn.Module):
+		"""${0:description}"""
+		def __init__(self, ${2:args}):
+
+# New Property
+snippet property
+	@property
+	def ${1:foo}(self) -> ${2:type}:
+		"""${3:doc}"""
+		return self._$1
+
+	@$1.setter
+	def $1(self, value: $2):
+		self._$1 = value
+
+# if __name__ == '__main__':
+snippet ifmain
+	if __name__ == '__main__':
+		${0:main()}
+	
+# logging
+# glog = get log
+snippet glog
+	import logging
+	LOGGER = logging.getLogger(${0:__name__})
