@@ -43,6 +43,7 @@ map("n", "<leader>Q", "<cmd>Bdelete!<CR>", { desc = "Force close current buffer"
 -- LSP
 map("n", "<leader>ds", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Show diagnostic info" })
 map("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename variable" })
+map("n", "<leader>fm", "<cmd>lua vim.lsp.buf.format({ timeout_ms = 2000 })<CR>", { desc = "General Format" })
 map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Go to definition" })
 
 -- Util

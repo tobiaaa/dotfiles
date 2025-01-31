@@ -1,10 +1,10 @@
--- EXAMPLE 
+-- EXAMPLE
 local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "texlab"}
+local servers = { "html", "cssls", "texlab" }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -16,11 +16,11 @@ for _, lsp in ipairs(servers) do
 end
 
 -- python
-lspconfig.pyright.setup({
+lspconfig.pyright.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  filetypes = {"python"},
-})
+  filetypes = { "python" },
+}
 
 -- bash
-lspconfig.bashls.setup{}
+lspconfig.bashls.setup {}

@@ -6,6 +6,9 @@ return {
       require("nvchad.configs.lspconfig").defaults()
       require "configs.lspconfig"
     end,
+    opts = {
+      format = { timeout_ms = 5000 },
+    },
   },
   --
   {
@@ -17,7 +20,7 @@ return {
         "prettier",
         "isort",
         "bash-language-server",
-        "texlab"
+        "texlab",
       },
     },
   },
@@ -59,6 +62,6 @@ return {
   },
   {
     "moll/vim-bbye",
-    event="VeryLazy"
+    event = "VeryLazy",
   },
 }
