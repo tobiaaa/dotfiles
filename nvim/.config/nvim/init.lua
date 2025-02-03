@@ -41,6 +41,8 @@ vim.opt.colorcolumn = {80,100}
 vim.opt.foldmethod = "manual"
 vim.opt.timeoutlen = 1000
 
+vim.env.NVIM = "1"
+
 require "nvchad.autocmds"
 
 vim.schedule(function()
