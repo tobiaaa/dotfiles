@@ -1,6 +1,9 @@
 return {
     "catppuccin/nvim",
     priority = 1000,
+    opt = {
+        transparent = true
+    },
     config = function()
          require("catppuccin").setup({
              custom_highlights = function(colors)
