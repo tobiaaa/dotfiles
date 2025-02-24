@@ -44,9 +44,6 @@ return {
     "nvim-lua/plenary.nvim",
   },
   {
-    "christoomey/vim-tmux-navigator",
-  },
-  {
     "xiyaowong/virtcolumn.nvim",
     event = "VeryLazy",
   },
