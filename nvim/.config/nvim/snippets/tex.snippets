@@ -12,6 +12,18 @@ snippet item itemize environment
 snippet it \item
 	\\item ${1:${VISUAL}}
 
+# Equation
+snippet ieq inline equation
+		\(${0}\)
+
+snippet eq equation environment
+	\\begin{align*}
+        ${0}
+	\\end{align*}
+
+snippet fr equation environment
+    \\frac{${1}}{${2}}
+
 # Enumerate
 snippet enum enumerate environment
 	\\begin{enumerate}
