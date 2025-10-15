@@ -5,6 +5,7 @@ local options = {
     -- html = { "prettier" },
     python = { "autopep8" },
     bash = { "shfmt" },
+    markdown = { "prettier" },
   },
 
   format_on_save = {
