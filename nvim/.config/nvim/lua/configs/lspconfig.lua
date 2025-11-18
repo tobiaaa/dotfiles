@@ -8,16 +8,12 @@ local servers = { "html", "cssls", "texlab" , "bashls" , "matlab_ls", "marksman"
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    on_init = on_init,
-    capabilities = capabilities,
-  }
+  vim.lsp.config(lsp, {})
+  vim.lsp.enable(lsp)
 end
 
--- python
-lspconfig.pyright.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
+-- Python with custom settings
+vim.lsp.config('pyright', {
   filetypes = { "python" },
-}
+})
+vim.lsp.enable('pyright')
