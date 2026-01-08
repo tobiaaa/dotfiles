@@ -4,8 +4,8 @@
 
 | Shortcut | Function              |
 | -------- | --------------------- |
-| gg       | Beginning of document |
-| G        | End of document       |
+| GG       | Beginning of document |
+| SHIFT+G  | End of document       |
 | CTRL + D | Change colors         |
 
 Color settings:
