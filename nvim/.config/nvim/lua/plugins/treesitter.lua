@@ -6,9 +6,7 @@ return {
         "latex-lsp/tree-sitter-latex"
     },
     config = function()
-        local treesitter = require("nvim-treesitter.configs")
-
-        treesitter.setup({
+        require'nvim-treesitter'.setup {
             highlight = {
                 enable = true
             },
@@ -39,6 +37,6 @@ return {
                     node_decremental = "<M-j>",
                 }
             }
-        })
+        }
     end
 }

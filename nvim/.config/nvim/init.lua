@@ -37,7 +37,7 @@ dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
 
 vim.opt.termguicolors = true
-vim.opt.colorcolumn = { 80, 100 }
+-- colorcolumn is managed per-window via autocmd below
 vim.opt.foldmethod = "manual"
 vim.opt.timeoutlen = 1000
 
@@ -45,6 +45,36 @@ vim.opt.timeoutlen = 1000
 vim.env.NVIM = "1"
 
 require "nvchad.autocmds"
+
+-- Set colorcolumn only for programming languages
+local programming_fts = {
+  "python", "javascript", "typescript", "javascriptreact", "typescriptreact",
+  "c", "cpp", "rust", "go", "java", "lua", "ruby", "php", "perl",
+  "sh", "bash", "zsh", "vim", "html", "css", "scss", "json", "yaml", "toml",
+  "sql", "r", "julia", "kotlin", "swift", "dart", "elixir", "haskell",
+  "scala", "clojure", "ocaml", "zig", "nim"
+}
+
+-- Convert to set for faster lookup
+local programming_fts_set = {}
+for _, ft in ipairs(programming_fts) do
+  programming_fts_set[ft] = true
+end
+
+vim.api.nvim_create_autocmd({ "FileType", "BufWinEnter" }, {
+  pattern = "*",
+  callback = function()
+    vim.schedule(function()
+      local ft = vim.bo.filetype
+      if programming_fts_set[ft] then
+        vim.wo.colorcolumn = "80,100"
+      else
+        vim.wo.colorcolumn = ""
+      end
+    end)
+  end,
+  desc = "Set colorcolumn only for programming languages"
+})
 
 vim.schedule(function()
     require "mappings"
