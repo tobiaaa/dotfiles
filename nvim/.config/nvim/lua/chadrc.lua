@@ -4,7 +4,7 @@
 ---@type ChadrcConfig
 local M = {}
 
-M.ui = {
+M.base46 = {
     theme = "catppuccin",
     transparency = true,
 
@@ -12,6 +12,9 @@ M.ui = {
         Comment = { italic = true },
         ["@comment"] = { italic = true },
     },
+}
+
+M.ui = {
     statusline = {
         theme = "default",
         separator_style = "round",

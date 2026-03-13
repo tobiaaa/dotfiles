@@ -7,7 +7,7 @@ return {
         "latex-lsp/tree-sitter-latex"
     },
     config = function()
-        require'nvim-treesitter'.setup {
+        require'nvim-treesitter.configs'.setup {
             highlight = {
                 enable = true
             },
