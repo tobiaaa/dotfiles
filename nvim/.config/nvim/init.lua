@@ -32,10 +32,6 @@ require("lazy").setup({
     { import = "plugins" },
 }, lazy_config)
 
--- load theme
-dofile(vim.g.base46_cache .. "defaults")
-dofile(vim.g.base46_cache .. "statusline")
-
 vim.opt.termguicolors = true
 -- colorcolumn is managed per-window via autocmd below
 vim.opt.foldmethod = "manual"
@@ -80,7 +76,7 @@ vim.schedule(function()
     require "mappings"
 end)
 
-local ok, _ = pcall(vim.cmd, 'colorscheme catppuccin')
+local ok, _ = pcall(vim.cmd, 'colorscheme catppuccin-mocha')
 
 if not ok then
     vim.cmd 'colorscheme default'
@@ -91,3 +87,6 @@ vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none' })
 vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })
 vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "none"})
 vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "none"})
+
+-- load theme
+require("base46").load_all_highlights()
