@@ -26,7 +26,7 @@ M.ui = {
                 local current_time = os.time()
 
                 -- Converting the Unix timestamp to a date and time format
-                local formatted_time = os.date("%d-%m %H:%M", current_time)
+                local formatted_time = os.date("%d-%m %H:%M ", current_time)
                 local separators = {}
                 local config = require("nvconfig").ui.statusline
                 local theme = config.theme
@@ -35,24 +35,6 @@ M.ui = {
                 local mode = {
                     default = {
                         default = { left = "", right = "" },
-                        round = { left = "", right = "" },
-                        block = { left = "█", right = "█" },
-                        arrow = { left = "", right = "" },
-                    },
-                    minimal = {
-                        default = { left = "█", right = "█" },
-                        round = { left = "", right = "" },
-                        block = { left = "█", right = "█" },
-                        arrow = { left = "█", right = "█" },
-                    },
-                    vscode = {
-                        default = { left = "█", right = "█" },
-                        round = { left = "", right = "" },
-                        block = { left = "█", right = "█" },
-                        arrow = { left = "", right = "" },
-                    },
-                    vscode_colored = {
-                        default = { left = "█", right = "█" },
                         round = { left = "", right = "" },
                         block = { left = "█", right = "█" },
                         arrow = { left = "", right = "" },

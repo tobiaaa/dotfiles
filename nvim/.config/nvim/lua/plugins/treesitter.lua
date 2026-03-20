@@ -1,43 +1,30 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    tag = "v0.10.0",
-    event = { "BufReadPre", "BufNewFile" },
     build = ":TSUpdate",
-    dependencies = {
-        "latex-lsp/tree-sitter-latex"
-    },
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
-        require'nvim-treesitter.configs'.setup {
-            highlight = {
-                enable = true
-            },
-            indent = {
-                enable = true
-            },
-            autotag = {
-                enable = true
-            },
-            ensure_installed = {
-                "json",
-                "yaml",
-                "markdown",
-                "bash",
-                "python",
-                "gitignore",
-                "lua",
-                "latex",
-                "markdown",
-                "markdown_inline"
-            },
-            incremental_selection = {
-                enable = true,
-                keymaps = {
-                    init_selection = "<M-s>",
-                    node_incremental = "<M-k>",
-                    scope_incremental = "<M-n>",
-                    node_decremental = "<M-j>",
-                }
-            }
+        -- New nvim-treesitter only manages parser installation.
+        -- Highlighting is handled automatically by vim.treesitter when a parser is present.
+        -- Ensure parsers are installed on startup.
+        local ensure_installed = {
+            "json", "yaml", "markdown", "markdown_inline",
+            "bash", "python", "lua", "latex",
         }
-    end
+        local installed = require("nvim-treesitter.config").get_installed()
+        local to_install = vim.tbl_filter(function(lang)
+            return not vim.tbl_contains(installed, lang)
+        end, ensure_installed)
+        if #to_install > 0 then
+            require("nvim-treesitter").install(to_install)
+        end
+
+        -- Use nvim-treesitter's indent expression where supported
+        vim.api.nvim_create_autocmd("FileType", {
+            callback = function()
+                if pcall(vim.treesitter.start) then
+                    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+                end
+            end,
+        })
+    end,
 }
