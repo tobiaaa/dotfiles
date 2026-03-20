@@ -41,18 +41,18 @@ snippet enum enumerate environment
 snippet figi figure environment (includegraphics)
 	\\begin{figure}
 		\\centering
-		\\includegraphics[scale=${1}]{Figures/${2}}
-	\\caption{${3}}
-	\\label{fig:${4}}
+		\\resizebox{\\textwidth}{!}{\\includegraphics[scale=${1}]{${2}}}
+        \\caption{${3}}
+        \\label{fig:${4}}
 	\\end{figure}
 	${0}
 
 snippet fig figure environment (input)
-	\\begin{figure}
+	\\begin{figure}[h]
 		\\centering
-		\\input{${1}}
-	\\caption{${3}}
-	\\label{fig:${4}}
+		\\resizebox{\\textwidth}{!}{\\input{${1}}}
+        \\caption{${3}}
+        \\label{fig:${4}}
 	\\end{figure}
 	${0}
 

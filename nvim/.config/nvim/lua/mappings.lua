@@ -4,7 +4,6 @@ require "nvchad.mappings"
 vim.g.mapleader = " "
 local map = vim.keymap.set
 
-map("n", ";", ":", { desc = "CMD enter command mode" })
 
 map("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 map("i", "jk", "<Esc>", { desc = "Exit insert mode" })
@@ -52,6 +51,3 @@ map("t", "jk", "<C-\\><C-n>", { desc = "Show current path" })
 
 -- Spellcheck
 map("n", "cs", "i<C-X>s", { desc = "Show spelling suggestions" })
-
--- Session
-map("n", "<leader>sl", function() require("persistence").select() end, { desc = "Load session" })

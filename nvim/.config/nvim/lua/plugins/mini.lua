@@ -1,7 +1,8 @@
 return {
     'echasnovski/mini.nvim',
-    event = "InsertEnter",
+    event = "VeryLazy",
     config = function()
         require("mini.surround").setup()
+        require("mini.jump").setup()
     end,
 }

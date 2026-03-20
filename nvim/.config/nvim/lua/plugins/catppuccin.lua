@@ -6,6 +6,7 @@ return {
     },
     config = function()
          require("catppuccin").setup({
+             transparent_background = true,
              custom_highlights = function(colors)
                  return {
                      AlphaShortcut = { fg = colors.red, bg = colors.mauve},
