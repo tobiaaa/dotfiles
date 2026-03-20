@@ -1,6 +1,7 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
+    branch = "main",
     event = { "BufReadPre", "BufNewFile" },
     config = function()
         -- New nvim-treesitter only manages parser installation.
