@@ -7,6 +7,7 @@ return {
 
     local opts = { keywords = {
       DEBUG = { icon = "", color = "#CBA6F7" },
+      DEPRECATED = { icon = "", color = "#F9E2AF" },
     } }
 
     todo_comments.setup(opts)
