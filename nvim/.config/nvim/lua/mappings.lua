@@ -36,6 +36,23 @@ map("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })
 map("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 map("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
+-- Tab workspaces (named layouts) + tmux-style number jumping
+local workspaces = require "configs.workspaces"
+map("n", "<leader>tw", function() workspaces.pick() end, { desc = "Open tab workspace" })
+map("n", "<leader>tr", function() workspaces.rename() end, { desc = "Rename current tab" })
+
+for i = 1, 9 do
+    map("n", "<leader>" .. i, i .. "gt", { desc = "Go to tab " .. i })
+end
+
+map("n", "<leader><Tab>", "<cmd>tabnext<CR>", { desc = "Go to next tab" })
+map("n", "<leader><S-Tab>", "<cmd>tabprevious<CR>", { desc = "Go to previous tab" })
+
+-- Alt = tab nav (Ctrl = window nav), works in normal and terminal mode.
+-- <cmd> keeps terminal mode intact while switching tabs.
+map({ "n", "t" }, "<A-l>", "<cmd>tabnext<CR>", { desc = "Go to next tab" })
+map({ "n", "t" }, "<A-h>", "<cmd>tabprevious<CR>", { desc = "Go to previous tab" })
+
 map("n", "<leader>q", "<cmd>Bdelete<CR>", { desc = "Close current buffer" })
 map("n", "<leader>Q", "<cmd>Bdelete!<CR>", { desc = "Force close current buffer" })
 

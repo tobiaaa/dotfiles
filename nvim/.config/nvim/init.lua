@@ -35,12 +35,18 @@ require("lazy").setup({
 vim.opt.termguicolors = true
 -- colorcolumn is managed per-window via autocmd below
 vim.opt.foldmethod = "manual"
-vim.opt.timeoutlen = 1000
+vim.opt.timeoutlen = 500
 
 
 vim.env.NVIM = "1"
 
 require "nvchad.autocmds"
+
+-- Rename :term buffers in the tabufline based on what's running (b:term_title)
+require("configs.term_tabname").setup()
+
+-- :Workspace / :TabRename commands for named tab layouts
+require("configs.workspaces").setup()
 
 -- Set colorcolumn only for programming languages
 local programming_fts = {

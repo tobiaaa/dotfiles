@@ -60,7 +60,43 @@ M.ui = {
                 return gen_block("󰥔", formatted_time, "%#St_Pos_sep#", "%#St_Pos_bg#", "%#St_Pos_txt#")
             end
         },
-    }
+    },
+
+    -- Override tabufline's "tabs" module so each tab page shows its name
+    -- (vim.t.tabname, set by configs/workspaces) instead of just a number.
+    -- Falls back to the bare number when a tab is unnamed. Click-to-switch is
+    -- preserved via the original GotoTab handler.
+    tabufline = {
+        -- Drop the "btns" module (theme-toggle switch + close-all-buffers "x")
+        -- that NvChad renders to the right of the tabs.
+        order = { "treeOffset", "buffers", "tabs" },
+        modules = {
+            tabs = function()
+                local btn = require("nvchad.tabufline.utils").btn
+                local fn, g = vim.fn, vim.g
+                local result, tabs = "", fn.tabpagenr "$"
+
+                if tabs > 1 then
+                    for nr = 1, tabs do
+                        local tab_hl = "TabO" .. (nr == fn.tabpagenr() and "n" or "ff")
+                        local name = fn.gettabvar(nr, "tabname", "")
+                        local label = name ~= "" and (" " .. nr .. ":" .. name .. " ")
+                            or (" " .. nr .. " ")
+                        result = result .. btn(label, tab_hl, "GotoTab", nr)
+                    end
+
+                    local new_tabtn = btn(" 󰐕 ", "TabNewBtn", "NewTab")
+                    local tabstoggleBtn = btn(" TABS ", "TabTitle", "ToggleTabs")
+                    local small_btn = btn(" 󰅁 ", "TabTitle", "ToggleTabs")
+
+                    return g.TbTabsToggled == 1 and small_btn
+                        or new_tabtn .. tabstoggleBtn .. result
+                end
+
+                return ""
+            end,
+        },
+    },
 }
 
 
