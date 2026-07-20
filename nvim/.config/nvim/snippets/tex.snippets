@@ -9,8 +9,24 @@ snippet item itemize environment
 	\\begin{itemize}
 		\\item ${0}
 	\\end{itemize}
+
 snippet it \item
 	\\item ${1:${VISUAL}}
+
+snippet rit Rightarrow \item
+    \\item[\\(\\Rightarrow\\)] 
+
+snippet sec Section
+    \\section{${0}}
+
+snippet subsec Subsection
+    \\subsection{${0}}
+
+snippet arr arrow
+    \\(\rightarrow\\)
+
+snippet Arr Double arrow
+    \\(\Rightarrow\\)
 
 # Equation
 snippet ieq inline equation
@@ -59,15 +75,25 @@ snippet fig figure environment (input)
 # Table
 snippet tab tabular environment
     \begin{tabular}{ c c }
-         Head 1 & Head 2  \\ 
-         Row 1  & ABC     \\   
+         Head 1 & Head 2  \\\\ 
+         Row 1  & ABC     \\\\   
     \end{tabular}
 
 # Frame
-snippet frm frame environment
+snippet fra frame environment
     \\begin{frame}[t]{${0}}
         ${1}
     \\end{frame}
+
+snippet col columns environment
+    \\begin{columns}
+        \\begin{column}[t]{0.5\\textwidth}
+        ${1}
+        \\end{column}
+        \\begin{column}[t]{0.5\\textwidth}
+            
+        \\end{column}
+    \\end{columns}
 
 # Misc
 snippet par paragraph

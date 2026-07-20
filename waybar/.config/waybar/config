@@ -11,7 +11,6 @@
         "~/.config/waybar/modules.json"
     ],    
     "modules-left": [
-        "custom/appmenu",
         "hyprland/workspaces",
     ],
     "modules-center": [
@@ -21,7 +20,7 @@
         "custom/submap",
         "mpd", 
         "pulseaudio", 
-        "network", 
+        // "network", 
         "keyboard-state", 
         "battery", 
         "idle_inhibitor",
