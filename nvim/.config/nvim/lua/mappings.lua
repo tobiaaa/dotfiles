@@ -62,9 +62,17 @@ map("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename var
 map("n", "<leader>fm", "<cmd>lua vim.lsp.buf.format({ timeout_ms = 2000 })<CR>", { desc = "General Format" })
 map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Go to definition" })
 
+-- Terminal mode
+map("t", "jk", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
+map("t", "<C-h>", "<cmd>wincmd h<CR>", { desc = "Focus left window" })
+map("t", "<C-j>", "<cmd>wincmd j<CR>", { desc = "Focus lower window" })
+map("t", "<C-k>", "<cmd>wincmd k<CR>", { desc = "Focus upper window" })
+map("t", "<C-l>", "<cmd>wincmd l<CR>", { desc = "Focus right window" })
+map("t", "<C-w>", "<C-\\><C-n><C-w>", { desc = "Window command prefix" })
+
 -- Util
 map("n", "<leader>dp", "<cmd>echo expand('%:p')<CR>", { desc = "Show current path" })
-map("t", "jk", "<C-\\><C-n>", { desc = "Show current path" })
 
 -- Spellcheck
 map("n", "cs", "i<C-X>s", { desc = "Show spelling suggestions" })
