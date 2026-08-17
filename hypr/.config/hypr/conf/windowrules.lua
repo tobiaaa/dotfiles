@@ -1,0 +1,4 @@
+-- Global window rules.
+-- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/ for more
+--
+-- Per-machine rules (work / home) live in conf/profiles.lua.

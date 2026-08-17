@@ -1,0 +1,14 @@
+-- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
+-- hl.config({
+--     dwindle = {
+--         pseudotile     = true, -- master switch for pseudotiling
+--         preserve_split = true, -- you probably want this
+--     },
+-- })
+
+-- See https://wiki.hypr.land/Configuring/Layouts/Master-Layout/ for more
+-- hl.config({
+--     master = {
+--         new_status = "master",
+--     },
+-- })
